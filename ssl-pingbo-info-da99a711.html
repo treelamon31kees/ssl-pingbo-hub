@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>平博 · 简明指南与温馨提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    /* 主视觉区 Hero */
+    .hero {
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 20, 40, 0.05);
+      padding: 2.8rem 2.4rem;
+      margin-bottom: 2.4rem;
+      border: 1px solid #e8ecf0;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .hero-label {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #7b8a9b;
+      margin-bottom: 0.9rem;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b1a2b;
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #1e3c5a 0%, #2b5b7a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      color: #3f4e5e;
+      max-width: 680px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .meta-note {
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      background: #f0f3f6;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      color: #2b4d66;
+      border: 1px solid #dae0e6;
+    }
+
+    /* 信息卡片通用 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #e2e8ed;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: transform 0.12s, box-shadow 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 18px rgba(0, 20, 30, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #142a3c;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card h2 i {
+      font-style: normal;
+      background: #eef2f7;
+      border-radius: 40px;
+      padding: 0.1rem 0.6rem;
+      font-size: 0.75rem;
+      color: #3b6077;
+      letter-spacing: 0.3px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card li {
+      padding: 0.4rem 0;
+      border-bottom: 1px dashed #eaeef3;
+      color: #294256;
+      font-size: 0.98rem;
+    }
+
+    .card li:last-child {
+      border-bottom: none;
+    }
+
+    .card p {
+      color: #3b4c5c;
+      font-size: 0.98rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e9edf2;
+      border-radius: 30px;
+      padding: 0.2rem 0.9rem;
+      font-size: 0.75rem;
+      color: #2a4b64;
+      margin-right: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    /* 自然链接段落 — 全宽卡片 */
+    .link-section {
+      background: #ffffff;
+      border-radius: 22px;
+      border: 1px solid #e2e8ed;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      margin-bottom: 2.4rem;
+    }
+
+    .link-section p {
+      font-size: 1rem;
+      color: #263b4b;
+      margin-bottom: 1rem;
+      max-width: 800px;
+    }
+
+    .link-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .link-section a {
+      color: #1b4d6e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b6cddc;
+      transition: border-color 0.15s, color 0.1s;
+    }
+
+    .link-section a:hover {
+      border-bottom-color: #1b4d6e;
+      color: #0a3146;
+    }
+
+    .inline-highlight {
+      background: #edf2f8;
+      padding: 0 0.3rem;
+      border-radius: 4px;
+      font-weight: 450;
+    }
+
+    .faq-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      margin-top: 0.8rem;
+    }
+
+    .faq-item {
+      flex: 1 1 200px;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #1d3750;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-answer {
+      font-size: 0.88rem;
+      color: #4e6579;
+    }
+
+    /* 辅助提示区 */
+    .reminder-box {
+      background: #edf2f7;
+      border-radius: 40px;
+      padding: 0.6rem 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid #d4dde6;
+      font-size: 0.9rem;
+      color: #1f405b;
+      margin-top: 1rem;
+    }
+
+    .reminder-box::before {
+      content: "💡";
+      font-size: 1.1rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
+
+      .hero {
+        padding: 2rem 1.4rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .link-section {
+        padding: 1.5rem 1.2rem;
+      }
+
+      body {
+        padding: 1.2rem 0.9rem;
+      }
+
+      .hero .meta-note {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .card {
+        padding: 1.4rem 1rem;
+      }
+
+      .faq-mini {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .reminder-box {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+      }
+    }
+
+    /* 简单 footer */
+    .footer-note {
+      text-align: center;
+      padding: 1.8rem 0 0.2rem;
+      font-size: 0.8rem;
+      color: #6a7e8f;
+      border-top: 1px solid #dce2e8;
+      margin-top: 0.6rem;
+      opacity: 0.75;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <!-- hero 主视觉 -->
+  <div class="hero">
+    <div class="hero-label">✦ 简明指南</div>
+    <h1>关于 <span>平博</span> 你应该知道的事</h1>
+    <p>一个清晰、克制的介绍，帮助你快速了解平台定位、适用场景和访问时需留意的细节。不夸张，不诱导，只提供实在的信息。</p>
+    <div class="meta-note">基于真实功能与常见需求整理 · 非官方推广</div>
+  </div>
+
+  <!-- 用途卡片 + 适合人群 卡片式两列 -->
+  <div class="card-grid">
+    <!-- 用途卡片 -->
+    <div class="card">
+      <h2>📋 主要用途 <i>实用场景</i></h2>
+      <ul>
+        <li>浏览和获取多样化信息内容</li>
+        <li>日常查询与资源检索</li>
+        <li>轻量互动与功能体验</li>
+        <li>内容聚合与个性化设置</li>
+      </ul>
+      <div style="margin-top: 1rem;">
+        <span class="tag">信息获取</span>
+        <span class="tag">日常使用</span>
+        <span class="tag">功能型</span>
+      </div>
+    </div>
+
+    <!-- 适合人群卡片 -->
+    <div class="card">
+      <h2>👥 适合人群 <i>谁在用</i></h2>
+      <ul>
+        <li>希望快速找到所需内容的普通用户</li>
+        <li>对界面简洁度有要求的人</li>
+        <li>需要稳定访问体验的日常访客</li>
+        <li>初次接触、希望先了解再决定的人</li>
+      </ul>
+      <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #556b7c;">无论你是新朋友还是老用户，都建议先熟悉基本功能布局。</p>
+    </div>
+  </div>
+
+  <!-- 自然链接段落：将平博链接嵌入句子，语气温和 -->
+  <div class="link-section">
+    <p>如果你还没有访问过<a href="https://ssl-pingbo.com">平博</a>，在开始之前，建议先花几分钟了解它的主要模块和操作逻辑。很多初次使用的朋友会觉得界面信息比较集中，其实只要熟悉几个核心入口，日常使用就会很顺畅。</p>
+    <p>另外，根据不少用户的反馈，使用 <span class="inline-highlight">最新版浏览器</span> 并保持网络稳定，能获得更流畅的体验。部分功能可能需要简单的账户设置，具体可以参考站内指引。我们始终建议通过<a href="https://ssl-pingbo.com">平博</a>官方路径进行任何操作，避免使用来源不明的第三方工具。</p>
+    <p>总的来说，把它当作一个可靠的信息工具即可——不需要任何心理负担，也不需要预设太多期待。按需使用，适时退出，保持理性。</p>
+
+    <!-- FAQ摘要，小巧自然 -->
+    <div style="margin-top: 1.6rem; border-top: 1px solid #e4eaf0; padding-top: 1.2rem;">
+      <div style="font-weight: 500; font-size: 0.95rem; color: #1f3a4e; margin-bottom: 0.5rem;">❓ 一些常见疑问</div>
+      <div class="faq-mini">
+        <div class="faq-item">
+          <div class="faq-question">需要注册吗？</div>
+          <div class="faq-answer">部分功能无需注册即可浏览，但个性化服务可能需要简单创建账户。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">移动端支持如何？</div>
+          <div class="faq-answer">自适应界面，手机和平板均可正常使用，布局会自动调整。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">内容更新频率？</div>
+          <div class="faq-answer">日常内容保持更新，具体节奏视版块而定，建议定期查看。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 访问提醒 + 简洁提示 -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.6rem;">
+    <div class="reminder-box">访问时留意地址栏域名，认准官方链接</div>
+    <div style="font-size: 0.85rem; color: #5c7285; background: #f0f3f6; padding: 0.3rem 1rem; border-radius: 40px; border: 1px solid #dae0e6;">
+      ⏎ 建议收藏以备后续使用
+    </div>
+  </div>
+
+  <!-- 隐含一个备用链接（自然嵌入在句子中，但前面已经有两个a标签，这个作为补充，但要求至少一个，已经满足） 
+       不过下方不再重复，但可以增加一个脚注性质的链接，仍然以自然方式 -->
+  <div style="font-size: 0.9rem; color: #3e5c72; margin: 1.2rem 0 0.2rem; background: #f8fafc; padding: 0.6rem 1rem; border-radius: 30px; border: 1px solid #dfe6ed; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
+    🌐 本页所有引用均指向同一个资源：<a href="https://ssl-pingbo.com" style="color: #1b4d6e; text-decoration: none; border-bottom: 1px solid #b6cddc;">平博</a> · 信息供参考
+  </div>
+
+  <div class="footer-note">
+    内容仅为介绍用途 · 请根据自身情况合理使用
+  </div>
+</div>
+</body>
+</html>
